@@ -1,0 +1,44 @@
+.test-user-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 282px;
+	height: 254px;
+	padding: 20px;
+
+	&__img {
+		img {
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			margin-bottom: 20px;
+
+		}
+	}
+
+	&__item {
+		width: 242px;
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 13px;
+	}
+
+	&__item:last-child {
+		margin-bottom: 7px;
+	}
+
+	&__item_name {
+		text-align: center;
+		width: 242px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-bottom: 36px;
+	}
+}

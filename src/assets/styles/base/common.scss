@@ -1,0 +1,279 @@
+.test-button {
+
+	padding: 0px 24px;
+	background: #F4E041;
+	border-radius: 80px;
+	line-height: 34px;
+	color: rgba(0, 0, 0, 0.87);
+	@include adaptiveValue("font-size", 16, 12);
+}
+
+.test-button:hover {
+	background: #FFE302;
+}
+
+.test-button:disabled {
+	background: #B4B4B4;
+	color: rgba(255, 255, 255, 0.87);
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 11px;
+	// .options__item
+
+	&__title {
+		margin-bottom: 14px;
+	}
+
+	&__item {
+		position: relative;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-bottom: em(7);
+		}
+	}
+
+	// .options__input
+	&__input {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+
+		&:focus+.options__label:before {}
+
+		&:checked+.options__label:before {}
+
+		&:checked+.options__label:after {
+			transform: scale(1);
+		}
+	}
+
+	// .options__label
+	&__label {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		gap: 10px;
+
+		&:before {
+			content: "";
+			align-self: flex-start;
+			width: 20px;
+			height: 20px;
+			flex: 0 0 20px;
+			border-radius: 50%;
+			border: 1px solid #00BDD3;
+		}
+
+		&:after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #00BDD3;
+			position: absolute;
+			left: 5px;
+			top: 5px;
+		}
+	}
+
+	// .options__text
+	&__text {}
+}
+
+.options:not(:last-child) {
+	margin-bottom: 47px;
+}
+
+.test-preloader {
+	display: flex;
+	justify-content: center;
+
+	svg {
+		animation: load infinite linear 1s;
+	}
+}
+
+@keyframes load {
+	0% {}
+
+	100% {
+		transform: rotate(360deg);
+	}
+
+}
+
+.test-textarea {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 50px;
+	width: 380px;
+
+	// .test-textarea__input
+
+	&__input {
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		right: 100%
+	}
+
+	// .test-textarea__label
+
+	&__label {
+		position: relative;
+		display: flex;
+		width: 100%;
+	}
+
+
+	// .test-textarea__icon
+
+	&__icon {
+		width: 83px;
+		border: 1px solid rgba(0, 0, 0, 0.87);
+		border-radius: 4px 0px 0px 4px;
+		padding: 14px 15px;
+	}
+
+
+
+	// .test-textarea__label-text
+
+	&__label-text {
+
+		flex: 1 1 auto;
+		border: 1px solid #D0CFCF;
+		border-radius: 0px 4px 4px 0px;
+		color: #7E7E7E;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		padding-left: 16px;
+
+		@media (max-width:$mobileSmall) {
+			flex: 0 1 200px;
+		}
+	}
+
+	&__label-text-min {
+		position: absolute;
+		top: -11px;
+		left: 93px;
+		z-index: 5;
+		background: white;
+		padding: 4px 3px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 14px;
+		color: #7E7E7E;
+	}
+
+	&__label-helper-text {
+		position: absolute;
+		padding: 4px 3px;
+		bottom: -22px;
+		left: 93px;
+		z-index: 5;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 117%;
+		color: #7E7E7E;
+	}
+
+	&__label-text-err {
+		color: #CB3D40;
+	}
+
+	&__icon-err {
+		position: absolute;
+		padding: 4px 3px;
+		bottom: -22px;
+		left: 9px;
+		z-index: 5;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 117%;
+		color: #CB3D40;
+	}
+
+
+}
+
+.test-inp {
+	border: 1px solid #D0CFCF;
+	border-radius: 4px;
+	padding: 14px 16px;
+}
+
+
+
+.test-inp::placeholder {
+	color: #7E7E7E;
+}
+
+.test-inp:not(:last-child) {
+	margin-bottom: 50px;
+}
+
+
+.test-preloader {
+	margin-bottom: 20px;
+}
+
+
+.pagination {
+	margin: 20px 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	// .pagination__page
+
+	&__page {
+		display: flex;
+		justify-content: center;
+		font-size: 12px;
+		padding: 5px 12px;
+		border-radius: 50%;
+		margin-left: 10px;
+		margin-top: 10px;
+		background: #F4E041;
+	}
+
+	&__current-page {
+		background: #c5b433;
+	}
+}
+
+
+
+
+.err-icon {
+	border: 2px solid #CB3D40;
+}
+
+.err-label {
+	border-top: 2px solid #CB3D40;
+	border-bottom: 2px solid #CB3D40;
+	border-right: 2px solid #CB3D40;
+	border-left: none;
+}
+
+.errors {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: -45px;
+	left: 0px;
+	z-index: 5;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 117%;
+	color: #CB3D40;
+}

@@ -1,0 +1,30 @@
+.test-users {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// .test-users__title
+
+	&__title {
+		margin-bottom: 54px;
+		font-size: 40px;
+		line-height: 100%;
+		text-align: center;
+	}
+
+	// .test-users__list
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	// .test-users__card
+
+	&__card {}
+
+	// .test-users__preloader
+
+	&__preloader {}
+}

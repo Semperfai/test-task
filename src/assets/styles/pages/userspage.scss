@@ -1,0 +1,22 @@
+.users-page {
+
+	// .users-page__container
+
+	&__container {}
+
+	// .users-page__content
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .users-page__pages
+
+	&__pages {}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+	}
+}

@@ -1,0 +1,36 @@
+.test-header {
+
+	padding: 13px 60px;
+
+	@media (max-width:$mobile) {
+		padding: 13px 30px;
+	}
+
+	// .test-header__navigation
+	&__navigation {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+
+
+	}
+
+	// .test-header__title
+
+	&__logo {
+		display: flex;
+		align-items: center;
+	}
+
+	// .test-header__links
+	&__links {
+		@media (max-width:$mobile) {
+			margin-top: 10px;
+		}
+	}
+
+	&__link:not(:first-child) {
+		margin-left: 10px;
+	}
+}
